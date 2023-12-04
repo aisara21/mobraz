@@ -41,6 +41,7 @@ export default class App extends Component{
 
 
     render() {
+
         if(this.state.hasError) return <ErrorIndicator />;
 
         const planet = this.state.showRandomPlanet ? <RandomPlanet /> : null;
@@ -49,7 +50,7 @@ export default class App extends Component{
             <div className='container-fluid'>
                 <div className="row">
                     <div className="col-12">
- 
+
                         <Header/>
                         {planet}
                         <button className="toggle-planet btn btn-warning btn-lg" onClick={this.toggleRandomPlanet}>
@@ -58,6 +59,7 @@ export default class App extends Component{
                         <ErrorButton />
                     </div>
                 </div>
+
                 <PeoplePage />
 
                 <div className="row">
@@ -65,6 +67,7 @@ export default class App extends Component{
                         <ItemList
                             onItemSelected={this.onPersonSelected}
                             getData={this.swapiService.getAllPlanets}
+                            renderItem={item => (<span>{item.name} <button>!</button></span>)}
                         />
                     </div>
                     <div className="col-md-6">
@@ -77,6 +80,7 @@ export default class App extends Component{
                         <ItemList
                             onItemSelected={this.onPersonSelected}
                             getData={this.swapiService.getAllStarships}
+                            renderItem={item => item.name}
                         />
                     </div>
                     <div className="col-md-6">
@@ -86,5 +90,5 @@ export default class App extends Component{
             </div>
         );
     }
-
+    
 };
