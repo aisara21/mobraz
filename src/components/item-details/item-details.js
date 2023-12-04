@@ -47,9 +47,6 @@ export default class ItemDetails extends Component {
     }
 
 
-
-    
-
     render() {
         const {item, image} = this.state;
 
