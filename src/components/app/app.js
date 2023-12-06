@@ -60,5 +60,5 @@ export default class App extends Component{
             </ErrorBoundry>
         );
     }
-
+    
 };
