@@ -40,9 +40,10 @@ const StarshipList = compose(
     withChildFunction(renderModelAndName)
 )(ItemList);
 
+
+
 export {
     PersonList,
-    
     PlanetList,
     StarshipList
 }
